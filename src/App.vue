@@ -1,28 +1,52 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <modal />
+    <router-view />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+    // @ is an alias to /src
+    import Modal from "@/components/modal.vue";
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+
+    export default {
+      name: 'Home',
+      components: {
+        Modal
+      },
+
+      data() {
+        return {
+          showModal : false
+        }
+      },
+
+      methods: {
+          toggleModal(){
+              this.showModal = !this.showModal;
+          }
+      }
+      
+    }
 </script>
-
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+   @font-face {
+        font-family: 'Montserrat';
+        src: url('~@/assets/Fonts/Montserrat-Regular.otf');
+        src: url('~@/assets/Fonts/Montserrat-BoldItalic.otf'),
+            url('~@/assets/Fonts/Montserrat-Light.otf') ,
+            url('~@/assets/Fonts/Montserrat-Italic.otf') ,
+            url('~@/assets/Fonts/Montserrat-Medium.otf'),
+            url('~@/assets/Fonts/Montserrat-SemiBold.otf'),
+            url('~@/assets/Fonts/Montserrat-Thin.otf'),
+            url('~@/assets/Fonts/Montserrat-ThinItalic.otf');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+   body {
+      background: rgb(16, 20, 29);
+      font-family: 'Montserrat-Thin';
+    }
 </style>
