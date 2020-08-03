@@ -1,248 +1,201 @@
 <template>
-  <div id="wrapper">
 
-      <div class="header">
+  <div>
 
-        <a href="" class="logoLink">
-          <span id="logoText">Iploy</span>
-        </a>
+    
 
-        
-        <ul class="nav__links">
-          <li>
-            <router-link to="Modal">
-             <i class="fa fa-home"></i>
-            </router-link> 
-          </li>
-          <li class="nav__clipboard">
-            <a href="">
-            <i class="fa fa-clipboard"></i>
-            </a>
-          </li>
-        </ul>
-
-        <div class="searchInput">
+      <div id="wrapper">
+          <Topheader if="showModal" />
           
-          <input type="search" name="search" id="search" placeholder="Build project build by person name">
-        </div>
+          <div class="mainContent">
 
-        <ul class="nav__links">
-          <li>
-            <a href="">
-                <i class="fa fa-bell"></i>
-            </a>
-            <span class="nav__links_notifications">2</span>
-          </li>
-          <li>
-            <a href="" class="nav__bolt">
-              <i class="fa fa-bolt"></i>
-            </a>
-            <span class="nav__links_notifications">X</span>
-          </li>
-        </ul>
-
-
-        <div class="login-area">
-           
-            <div class="profile-text">
-      
-              <h4>wandumi sichali</h4>
-              <h6>Frontend Developer</h6>
-            </div>
             
-            
-            <img src="@/assets/dammy.png" alt="login" id="login-image" >
-              
-
-        </div>
 
 
-       
-      </div>
+            <div class="row">
 
-      <div class="mainContent">
+              <div class="leftside second">
 
+                  <div class="leftside__top">
 
+                    <a href="" class="leftside__link">
+                      <i class="fa fa-angle-left"></i>
+                    </a>
 
-
-        <div class="row">
-
-           <div class="leftside second">
-
-              <div class="leftside__top">
-
-                <a href="" class="leftside__link">
-                  <i class="fa fa-angle-left"></i>
-                </a>
+                  </div>
 
               </div>
 
-           </div>
+                <div class="rightside second">
 
-            <div class="rightside second">
-
-            
-              <div class="second__row">
+                
+                  <div class="second__row">
+                      
+                        <h3 class="text-color">Dploy Script</h3>
+                        <button class="button3">
+                          Edit Script
+                          <i class="fa fa-pencil"></i>
+                        </button>
                   
-                    <h3 class="text-color">Dploy Script</h3>
-                    <button class="button3">
-                      Edit Script
-                      <i class="fa fa-pencil"></i>
-                    </button>
-               
-              </div>
+                  </div>
 
-            
-            </div>
-
-          
-        </div>
-
-        <div class="row">
-
-          <div class="leftside">
-            
-            <div class="leftside_header">
-                <img src="@/assets/dammy.png" alt="secondLogo" id="secondLogo">
-                <h3>FIXED LTE</h3>
-                <h4>MODE CMS |</h4>
-            </div>
-
-            <ul>
-              <li>
-                <span>Product ID </span> 
-                <button type="button" class="view__on">View On</button>
-              </li>
-              <li>
-                <span>Auto Deploy </span> 
-                <label class="switch">
-                  <input type="checkbox">
-                  <span class="slider round"></span>
-                </label>
-              </li>
-              <li>
-                <span>Stack Notifications </span> 
-                <label class="switch">
-                  <input type="checkbox">
-                  <span class="slider round"></span>
-                </label>
-              </li>
-            </ul>
-
-          </div>
-
-          <div class="rightside">
-           
-                <div class="leftside__body">
-                  <textarea name="script" id="script" cols="30" rows="10"></textarea>
+                
                 </div>
 
-          
-          </div>
-
-        </div>
-        
-
-
-        <div class="row">
-           <div class="leftside second">
-
-              <div class="leftside__buttons">
-                <button class="button button1" @click.prevent="toggleModal" >
-
-                    Rollback 
-                 
-                </button>
-                <button class="button button2">Deploy Now</button>
-              </div>
-
-              <div class="leftside__footer">
-                <a href="">Archive project</a>
-              </div>
-
-           </div>
-
-            <div class="rightside second">
-
-             
-                  <div class="second__row">
-        
-                    <h3 class="text-color">Deployments</h3>
-                    <button class="button3">
-                      View Deployment History
-                      <i class="fa fa-clock-o"></i>
-                    </button>
-
-                  </div>
-
               
-                  <div class=" secondright__side__half">
-                      <div class="first_column">
-                        <div class="first_column_1">
-                            <h3>Froddo Baggins</h3>
-                            <p class="second_space">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur molestias  </p>
-                            
-                        </div>
-                        <div class="second_column_2">
-                            <p> 12:51 | Jul-31</p>
-                            <p class="second_space">
-                                <button type="buttton" class="button4">#a7bcdf</button>
-                            </p>
-                        </div>
-                      </div>
-                      <div class="second_column">
-                        
-                        <h4 class="failed">FAILED</h4>
-                        <div class="first_column_1">
-                            <h3>Bilbbo Baggins</h3>
-                            <p class="second_space">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur molestias  </p>
-                            
-                        </div>
-                        <div class="second_column_2">
-                            <p> 12:51 | Jul-31</p>
-                            <p class="second_space">
-                                <button type="buttton"  class="button4">#a7bcdf</button>
-                            </p>
-                        </div>
-                      </div>
-
-                  </div>
-                  
-
-              
-
-            
             </div>
 
-          
-        </div>
+            <div class="row">
 
+              <div class="leftside">
+                
+                <div class="leftside_header">
+                    <img src="@/assets/dammy.png" alt="secondLogo" id="secondLogo">
+                    <h3>FIXED LTE</h3>
+                    <h4>MODE CMS |</h4>
+                </div>
+
+                <ul>
+                  <li>
+                    <span>Product ID </span> 
+                    <button type="button" class="view__on">View On</button>
+                  </li>
+                  <li>
+                    <span>Auto Deploy </span> 
+                    <label class="switch">
+                      <input type="checkbox">
+                      <span class="slider round"></span>
+                    </label>
+                  </li>
+                  <li>
+                    <span>Stack Notifications </span> 
+                    <label class="switch">
+                      <input type="checkbox">
+                      <span class="slider round"></span>
+                    </label>
+                  </li>
+                </ul>
+
+              </div>
+
+              <div class="rightside">
+              
+                    <div class="leftside__body">
+                      <textarea name="script" id="script" cols="30" rows="10"></textarea>
+                    </div>
+
+              
+              </div>
+
+            </div>
+            
+
+
+            <div class="row">
+              <div class="leftside second">
+
+                  <div class="leftside__buttons">
+                    <button class="button button1" @click.prevent="toggleModal" >
+
+                        Rollback
+                    
+                    </button>
+                    <button class="button button2">Deploy Now</button>
+                  </div>
+
+                  <div class="leftside__footer">
+                    <a href="">Archive project</a>
+                  </div>
+
+              </div>
+
+                <div class="rightside second">
+
+                
+                      <div class="second__row">
+            
+                        <h3 class="text-color">Deployments</h3>
+                        <button class="button3">
+                          View Deployment History
+                          <i class="fa fa-clock-o"></i>
+                        </button>
+
+                      </div>
+
+                  
+                      <div class=" secondright__side__half">
+                          <div class="first_column">
+                            <div class="first_column_1">
+                                <h3>Froddo Baggins</h3>
+                                <p class="second_space">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur molestias  </p>
+                                
+                            </div>
+                            <div class="second_column_2">
+                                <p> 12:51 | Jul-31</p>
+                                <p class="second_space">
+                                    <button type="buttton" class="button4">#a7bcdf</button>
+                                </p>
+                            </div>
+                          </div>
+                          <div class="second_column">
+                            
+                            <h4 class="failed">FAILED</h4>
+                            <div class="first_column_1">
+                                <h3>Bilbbo Baggins</h3>
+                                <p class="second_space">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur molestias  </p>
+                                
+                            </div>
+                            <div class="second_column_2">
+                                <p> 12:51 | Jul-31</p>
+                                <p class="second_space">
+                                    <button type="buttton"  class="button4">#a7bcdf</button>
+                                </p>
+                            </div>
+                          </div>
+
+                      </div>
+                      
+
+                  
+
+                
+                </div>
+
+              
+            </div>
+
+            
+          </div>
         
-      </div>
      
-     <Modal v-show="showModal" />
    
+      </div>
+  
+
+    <modal v-if="showModal" @close-modal="toggleModal" />
+
   </div>
+  
+
+
 </template>
 
 <script>
 // @ is an alias to /src
 import Modal from "@/components/modal.vue";
+import Topheader from "@/components/Topheader.vue"
 
 
 export default {
   name: 'Home',
   components: {
-     Modal
+     Modal,
+     Topheader
   },
-
-  // created() {
-  //   this.showModal;
-  // },
 
   data() {
     return {
-      showModal : false
+      showModal:false
     }
   },
 
@@ -255,6 +208,21 @@ export default {
 }
 </script>
 <style scoped>
+     @font-face {
+        font-family: 'Montserrat';
+        src: url('~@/assets/Fonts/Montserrat-Regular.otf');
+        src: url('~@/assets/Fonts/Montserrat-BoldItalic.otf'),
+            url('~@/assets/Fonts/Montserrat-Light.otf') ,
+            url('~@/assets/Fonts/Montserrat-Italic.otf') ,
+            url('~@/assets/Fonts/Montserrat-Medium.otf'),
+            url('~@/assets/Fonts/Montserrat-SemiBold.otf'),
+            url('~@/assets/Fonts/Montserrat-Thin.otf'),
+            url('~@/assets/Fonts/Montserrat-ThinItalic.otf');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+
     *{
       margin: 0;
       padding: 0;
@@ -264,122 +232,10 @@ export default {
     
     #wrapper {
       height: 100vh;
+      font-family: Montserrat-Light;
     }
 
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: rgb(23, 27, 38);
-      height: 10vh;
-      margin-bottom: 50px;
-      
-    }
-
-    .logoLink {
-      color: #fff;
-      font-style: italic;
-      font-size: 18px;
-      text-align: center;
-      text-decoration: none;
-      line-height: 1.2;
-      width: 100px;
-    }
-
-    .login-area {
-      /* justify-content: flex-end; */
-      width: 300px;
-    }
-
-    .profile-text {
-      display: inline-block;
-      align-items: stretch;
-      width: 200px;
-      color: #cdddff;
-      font-size: 9px;
-      text-align: right;
-      padding-right: 10px;
-    }
-
-    #login-image {
-      width: 50px;
-      height: 40px;
-      border: 1px solid #fff;
-      color: #fff;
-      border-radius: 10px;
-    }
-
-
-    .nav__links {
-       list-style: none;
-       position: relative;
-
-    }
-
-    .nav__links li {
-      display: inline-block;
-      padding: 0 10px;
-      border-radius: 5px;
-    }
-
-    .nav__links a {
-      color: #cdddff;
-    }
-
-
-    .nav__links li:first-child {
-      background-color: rgb(33, 39, 53);
-      padding: 10px;
-      margin-right: 10px;
-    }
-
-    .nav__links li:last-child {
-      border-radius: 5px;
-      padding: 10px;
-      background-color: rgb(16, 20, 29);
-    }
-
-    .nav__clipboard {
-      border: 1px solid #ff795b;
-      padding: 5px;
-      
-    }
-
-    .nav__clipboard a {
-      color:#ff795b
-    }
-
-    .searchInput {
-       width: 300px;
-
-    }
-
-    .searchInput input[type=search] {
-      width: 100%;
-      padding: 8px;
-      border: none;
-      border-radius: 10px;
-      background-color: rgb(16, 20, 29);
-      text-align: center;
-    }
-
-    .login-name {
-      width: 300px;
-      float: left;
-    }
-
-    .nav__links_notifications {
-      font-size: .7rem;
-      background-color: seashell;
-      border-radius: 50%;
-      width: 15px;
-      height: 15px;
-      position: absolute;
-      top: 0;
-      text-align: center;
-      /* right: 1rem; */
-    }
-
+    
     /* End of the Header */
     /* Start of the main Content */
     .mainContent {
@@ -478,7 +334,8 @@ export default {
 
     .text-color {
       color:#ff795b;
-      font-size: 24px;
+      font-size: 22px;
+      font-family: Montserrat-Light;
     }
 
     .button {
@@ -649,8 +506,8 @@ export default {
 
     .first_column {
       display: flex;
-      justify-content: space-evenly;
-      flex-direction: row;
+      justify-content: space-between;
+      /* flex-direction: row; */
 
       
       margin-right: 10px;
@@ -664,7 +521,6 @@ export default {
       display: flex;
       justify-content: space-between;
       flex-direction: row;
-  
       padding: 20px 10px;
       background-color: rgb(23, 27, 38);
       border: 1px solid #ff795b;
@@ -678,10 +534,14 @@ export default {
     .first_column_1 {
       width: 50%;
       position: relative;
+      font-family: Montserrat-Light;
+      font-size: 12px;
     }
 
     .second_column_2 {
       width: 50%;
+      font-family: Montserrat-Light;
+      font-size: 12px;
     }
 
     .second_space {

@@ -1,21 +1,28 @@
 <template>
     <div>
+        <!-- <button class="button button1" @click.prevent="modalClick">Back {{ showModal }}</button> -->
       <!-- modal - must sit outside main page layout -->
-        <div v-if="showModal"  class="flex align-center align-vert modal modal--align">
+        <div class="flex modal modal--align">
             <div class="modal__container">
-            <a class="modal__close modal__close--x"  aria-hidden="true">&#x2715;</a>
+
+                <a class="modal__close modal__close--x"  aria-hidden="true" @click="closeModal">&#x2715;</a>
 
                 <div class="modal__header">
-                    <h3>Project Rollback</h3>
-                    <span>Choose a deployment to rollback to</span>
+                    
+                        <h1>Project Rollback</h1>
+                   
+                        <p>Choose a Deployment to rollback to</p>
+                    
                 </div>
+
+
                 <div class="modal__body">
                     
-                        <ul>
+                    <ul>
                             <li>
                                 <span>Product ID </span> 
 
-                                <button type="button" class="button3">View On</button>
+                                <button type="button" class="button button1">View On</button>
 
                                 <span>20: 52</span>
 
@@ -25,7 +32,7 @@
                             <li>
                                 <span>Product ID </span> 
 
-                                <button type="button" class="button3">View On</button>
+                                <button type="button" class="button button1">View On</button>
 
                                 <span>20: 52</span>
 
@@ -35,7 +42,7 @@
                             <li>
                                 <span>Product ID </span> 
 
-                                <button type="button" class="button4">View On</button>
+                                <button type="button" class="button button1">View On</button>
 
                                 <span>20: 52</span>
 
@@ -45,22 +52,25 @@
                             <li>
                                 <span>Product ID </span> 
 
-                                <button type="button" class="button4">View On</button>
+                                <button type="button" class="button button1">View On</button>
 
                                 <span>20: 52</span>
 
                                 <span>09 20</span>
                             </li>
                             
-                        </ul>
+                    </ul>
                     
                 </div>
-                
+
                 <div class="modal__footer">
-                    <button class="button button1">Back</button>
-                    <button class="button button2">Next</button>
+                    <button class="button button-footer button1" @click="closeModal">Back</button>
+                    <button class="button button-footer button2">Next</button>
                 </div>
+                
+               
             </div>
+            
         </div>
         <!-- / modal -->
 
@@ -74,25 +84,45 @@
         name: "modal",
         
        
-        data() {
-            return {
-               showModal : false
-            }
-        },
+        // data() {
+        //     return {
+        //        showModal : false
+        //     }
+        // },
         
+        methods:{
+            closeModal(){
+                this.$emit('close-modal');
+            }
+        }
         
        
     }
 </script>
 
 <style scoped>
-    
-   
-    .flex { display: flex; }
-    .align-center { justify-content: center; }
-    .align-vert,.align-vert.align-center { align-items: center; }
-    .modal--hide { display: flex; } /* classes fired by js for animation control */
-    /* This is on the wrapper for the whole modal */
+    @font-face {
+        font-family: 'Montserrat-Light';
+        src: url('~@/assets/Fonts/Montserrat-Light.otf');
+        font-weight: lighter;
+        font-style: lighter;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+
+    .flex { 
+        display: flex; 
+        align-items: center;
+        justify-content: space-around; 
+        font-family: Montserrat-Light;
+
+        
+    }
+
     .modal--align {
         width: 100%;
         height: 100%;
@@ -106,17 +136,18 @@
         position: relative;
         width: 100%;
         max-width: 600px;
-        height: 500px;
-        padding: 20px;
-        /* margin: 12px; */
+        max-height: 500px;
+        
+        margin: 12px;
         background:rgb(23, 27, 38);
     }
     
     .modal__close--x {
         font-size: 10px; 
         position: absolute;
-        top: 3px;
-        right: 10px;
+        top: 10px;
+        right: 15px;
+        padding: 10px;
         border-radius: 50%;
         background-color: rgb(37, 43, 57);
         color:#cdddff;
@@ -141,19 +172,44 @@
         100%  { opacity: 0; }
     }
 
+    .modal__header {
+        
+        width: 400px;
+        line-height: 1.2;
+        text-align: center;
+        margin:50px  auto 10px;
+
+    }
+
+    .modal__header h1 {
+        font-size: 24px;
+        color:salmon;
+    }
+
+    .modal__header p {
+        font-size: 14px;
+        color:#cdddff;
+    }
+
+    .modal__body {
+        padding: 10px 60px; 
+    }
+
     .modal__body ul {
       list-style: none;
       
     }
 
+
     .modal__body li {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       margin-top: 10px;
       padding: 15px;
       border-radius: 10px;
-      font-size: 12px;
-      background-color: rgb(37, 43, 57);
+      font-size: 10px;
+      background-color: rgb(23, 39, 53);
       color:#cdddff;
     }
 
@@ -161,16 +217,12 @@
       display: flex;
       justify-content: space-between;
       align-self: flex-end;
-      margin-top: 60px;
+      margin-top: 30px;
+      padding: 15px;
       background-color: rgb(33, 39, 53);
     }
 
-    .modal__header {
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        margin-top: 10px;
-    }
+  
 
     .button {
       padding: 10px 10px;
@@ -185,8 +237,12 @@
       padding-right: 30px;
     }
 
+    .button-footer {
+        padding-left:40px;
+        padding-right:40px;
+    }
     .button1 {
-      background-color: #252b39;
+      background-color: rgb(44, 51, 67);
       color: #cdddff;
       border:none;
     }
